@@ -5,7 +5,7 @@ Function Skapa_Struktur {  # namnet på funktionen
 
     $sökväg = "C:\Strukturverktyg\$namn"
 
-    try { # våran try den kommer att försöka kolla om mappen finns redan.
+    try { # våran try den kommer att försöka skapa o kolla om mappen finns redan.
         
         if (Test-Path $sökväg) {
             throw "Mappen finns redan!"
@@ -32,4 +32,7 @@ Function Skapa_Struktur {  # namnet på funktionen
 }
 
 $namn = Read-Host " Ange det hemliga namnet"
-CreateStructure -namn $namn
+Skapa_Struktur -namn $namn
+
+
+# För att köra skriptet, navigera till mappen och skriv i terminalen ./Uppgift1.ps1
