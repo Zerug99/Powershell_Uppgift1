@@ -9,7 +9,7 @@ Function  The-Creator {
         # Kolla om mappen redan finns
         if (Test-Path $sökväg) {
             throw "Mappen finns redan!"
-        }
+    
 
 
 
@@ -26,8 +26,11 @@ Function  The-Creator {
         New-item -ItemType file -Path "C:\Strukturverktyg\$name\logs\log1.txt" #Första logge
         Add-Content -Path "C:\Strukturverktyg\$name\logs\log1.txt" -Value "Struktur skapad: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
 
+Write-Host "Allt klart! Strukturen är skapad i $sökväg"
 
 
-
-
-Write-Host "Det hemliga namnet blir" $name # Skriver ut variablen som har angets här 
+ } catch {
+    # Felmeddelande om något går fel
+    Write-Host "Fel: $_"
+    Write-Host "Mappen kunde inte skapas"
+  }  
