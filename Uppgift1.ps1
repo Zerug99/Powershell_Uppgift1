@@ -1,4 +1,4 @@
-Function The-Creator {
+Function Skapa_Struktur {
     param (
         [string]$namn
     )
@@ -32,4 +32,4 @@ Function The-Creator {
 }
 
 $namn = Read-Host " Ange det hemliga namnet"
-The-Creator -namn $namn
+CreateStructure -namn $namn
