@@ -10,7 +10,7 @@ I Mappen logs skapas det ett loggfil och den kommer innehålla exat datum på n�
 ## Instruktioner - flera sätt
 - Ladda ner filen och gå till downloads. Där högerklickar du på filen och kör med powershell.
 
-- Starta genom terminalen, cd till där filen finns och skriv /.strukturverktyg.ps1
+- Starta genom terminalen, cd till där filen finns och skriv ./Uppgift1.ps1
 
 
 ## Reflektion 
