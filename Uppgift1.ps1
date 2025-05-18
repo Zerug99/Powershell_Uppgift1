@@ -1,0 +1,1 @@
+$name Read-Host "Ange det hemliga namnet" 
