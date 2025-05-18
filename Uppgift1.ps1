@@ -1,1 +1,3 @@
 $name = Read-Host "Ange det hemliga namnet"  # Det användaren skriver kommer att sparas i variabeln $name
+
+Write-Host "Det hemliga namnet blir" $name
