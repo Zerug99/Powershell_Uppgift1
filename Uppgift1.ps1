@@ -8,6 +8,6 @@ Write-Host "Det hemliga namnet blir" $name # Skriver ut variablen som har angets
     New-Item -ItemType Directory -Path "C:\Strukturverktyg\$name\scripts\"
     New-Item -ItemType Directory -Path "C:\Strukturverktyg\$name\temp\"
 
-    New-item -ItemType file -Path "C:\Strukturverktyg\$name\logs\log-YYYY-MM-DD.txt" #Första logge
-    Add-Content -Path "C:\Strukturverktyg\$name\logs\log-YYYY-MM-DD.txt" -Value "Struktur skapad: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
+    New-item -ItemType file -Path "C:\Strukturverktyg\$name\logs\log1.txt" #Första logge
+    Add-Content -Path "C:\Strukturverktyg\$name\logs\log1.txt" -Value "Struktur skapad: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
 
