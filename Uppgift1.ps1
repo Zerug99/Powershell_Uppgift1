@@ -1,36 +1,32 @@
-Function  The-Creator {
+Function The-Creator {
     param (
         [string]$namn
     )
 
-    $sökväg = "C:\Strukturverktyg\$namn
+    $sökväg = "C:\Strukturverktyg\$namn"
 
-      try {
+    try {
         # Kolla om mappen redan finns
         if (Test-Path $sökväg) {
             throw "Mappen finns redan!"
-    
+        }
 
+        # Skapa mappar
+        New-Item -ItemType Directory -Path "C:\Strukturverktyg\" 
+        New-Item -ItemType Directory -Path "$sökväg\" 
+        New-Item -ItemType Directory -Path "$sökväg\logs\" 
+        New-Item -ItemType Directory -Path "$sökväg\scripts\" 
+        New-Item -ItemType Directory -Path "$sökväg\temp\" 
 
+        # Skapa loggfil
+        New-Item -ItemType File -Path "$sökväg\logs\log1.txt" 
+        Add-Content -Path "$sökväg\logs\log1.txt" -Value "Struktur skapad: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
 
+        Write-Host "Klart strukturen finns i $sökväg"
 
-
-
-
-     New-Item -ItemType Directory -Path "C:\Strukturverktyg\" # Inne i mappen kommer vårt verktyg jobba i. Dom flesta har ett C: 
-     New-Item -ItemType Directory -Path "C:\Strukturverktyg\$name\"  # Det användaren har angett kommer att bli mappen. 
-     New-Item -ItemType Directory -Path "C:\Strukturverktyg\$name\logs\" 
-     New-Item -ItemType Directory -Path "C:\Strukturverktyg\$name\scripts\"
-     New-Item -ItemType Directory -Path "C:\Strukturverktyg\$name\temp\"
-
-        New-item -ItemType file -Path "C:\Strukturverktyg\$name\logs\log1.txt" #Första logge
-        Add-Content -Path "C:\Strukturverktyg\$name\logs\log1.txt" -Value "Struktur skapad: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
-
-Write-Host "Allt klart! Strukturen är skapad i $sökväg"
-
-
- } catch {
-    # Felmeddelande om något går fel
-    Write-Host "Fel: $_"
-    Write-Host "Mappen kunde inte skapas"
-  }  
+    } catch {
+        # Felmeddelande om något går fel
+        Write-Host "Fel: $_"
+        Write-Host "Mappen kunde inte skapas"
+    }
+}
