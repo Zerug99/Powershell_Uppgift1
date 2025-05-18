@@ -30,3 +30,6 @@ Function The-Creator {
         Write-Host "Mappen kunde inte skapas"
     }
 }
+
+$namn = Read-Host " Ange det hemliga namnet"
+The-Creator -namn $namn
