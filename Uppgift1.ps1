@@ -2,3 +2,4 @@ $name = Read-Host "Ange det hemliga namnet"  # Det användaren skriver kommer at
 
 Write-Host "Det hemliga namnet blir" $name # Skriver ut variablen som har angets här 
 
+New-Item -ItemType Directory -Path "C:\Strukturverktyg\" 
